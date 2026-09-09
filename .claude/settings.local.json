@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Bash(npm install *)",
+      "Bash(cp -r /d/Test-website/client/vite-project/. /d/Test-website/client/)",
+      "Bash(rm -rf /d/Test-website/client/vite-project)",
+      "Bash(npm init *)",
+      "Bash(npx tailwindcss *)",
+      "Bash(git -C /d/Test-website status)"
+    ]
+  }
+}

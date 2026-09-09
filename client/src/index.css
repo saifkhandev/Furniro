@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --color-background: #F7F4EF;
+    --color-surface: #FFFFFF;
+    --color-ink: #1F1B16;
+    --color-ink-muted: #6B6255;
+    --color-accent-primary: #A9491F;
+    --color-accent-primary-hover: #8C3B18;
+    --color-accent-secondary: #5B6B4E;
+    --color-border: #E4DDD1;
+    --color-error: #B3261E;
+    --color-success: #3D6B3D;
+  }
+
+  html {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-ink font-body;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+  }
+}
+
+@layer components {
+  .container-main {
+    @apply max-w-container mx-auto px-container-px;
+  }
+
+  .btn-primary {
+    @apply bg-accent-primary text-surface px-6 py-3 rounded-lg font-medium
+           transition-all duration-200 ease-out
+           hover:bg-accent-primary-hover hover:scale-[1.02]
+           focus:outline-none focus:ring-2 focus:ring-accent-primary focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply border border-border text-ink px-6 py-3 rounded-lg font-medium
+           transition-all duration-200 ease-out
+           hover:bg-accent-primary hover:bg-opacity-10
+           focus:outline-none focus:ring-2 focus:ring-accent-primary focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-surface rounded-lg p-6 shadow-sm border border-border;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-border bg-surface
+           text-ink placeholder:text-ink-muted
+           focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-transparent
+           transition-all duration-200;
+  }
+}
+
+/* Smooth scroll base */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
