@@ -29,7 +29,8 @@
       "Bash(git restore *)",
       "Bash(git check-ignore *)",
       "Bash(git push *)",
-      "Bash(timeout 5 npm run dev)"
+      "Bash(timeout 5 npm run dev)",
+      "Bash(npx vite *)"
     ]
   }
 }
