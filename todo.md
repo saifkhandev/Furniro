@@ -20,12 +20,12 @@ Cross-reference `testing.md` before checking off any task marked **(test)**.
 
 ## Phase 1 — Backend Foundations
 
-- [ ] Define Mongoose schemas: `User`, `Product`, `Category`, `Order`, `ContactMessage` (fields per `prd.md` feature list)
-- [ ] Set up centralized error-handling middleware
-- [ ] Set up request validation middleware (Zod or express-validator, per `techstack.md`)
-- [ ] Set up `helmet`, `cors` (restricted to `CLIENT_URL`), `morgan` (dev only)
-- [ ] Set up basic rate limiting on auth routes
-- [ ] **(test)** Confirm server starts cleanly, all middleware loads without error
+- [x] Define Mongoose schemas: `User`, `Product`, `Category`, `Order`, `ContactMessage` (fields per `prd.md` feature list)
+- [x] Set up centralized error-handling middleware
+- [x] Set up request validation middleware (Zod or express-validator, per `techstack.md`)
+- [x] Set up `helmet`, `cors` (restricted to `CLIENT_URL`), `morgan` (dev only)
+- [x] Set up basic rate limiting on auth routes
+- [x] **(test)** Confirm server starts cleanly, all middleware loads without error
 
 ## Phase 2 — Authentication
 

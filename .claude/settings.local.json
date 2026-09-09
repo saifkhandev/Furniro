@@ -7,7 +7,29 @@
       "Bash(rm -rf /d/Test-website/client/vite-project)",
       "Bash(npm init *)",
       "Bash(npx tailwindcss *)",
-      "Bash(git -C /d/Test-website status)"
+      "Bash(git -C /d/Test-website status)",
+      "Bash(timeout 10 npx vite --host)",
+      "Bash(timeout 10 node server.js)",
+      "Bash(curl -s http://localhost:5000/api/health)",
+      "Bash(curl *)",
+      "Bash(node server.js)",
+      "Bash(npx oxlint *)",
+      "Bash(npx eslint *)",
+      "Bash(npx prettier *)",
+      "Bash(timeout 5 node server.js)",
+      "Bash(timeout 8 node server.js)",
+      "Bash(read -p \"Please enter your MongoDB URI: \" MONGODB_URI)",
+      "Bash(timeout 10 npm run dev)",
+      "Bash(timeout 15 npm run dev)",
+      "Bash(timeout 20 npm run dev)",
+      "Bash(node -e ' *)",
+      "Bash(node *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git restore *)",
+      "Bash(git check-ignore *)",
+      "Bash(git push *)",
+      "Bash(timeout 5 npm run dev)"
     ]
   }
 }
