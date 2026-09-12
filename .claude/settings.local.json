@@ -34,7 +34,11 @@
       "mcp__ide__getDiagnostics",
       "Bash(taskkill /F /IM node.exe)",
       "Bash(timeout 2 /T 2 /NOBREAK)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Read(//client/src/**)",
+      "Bash(git -C /d/Test-website add -A)",
+      "Bash(git -C /d/Test-website commit -m 'feat: Complete Phase 5 - Home Page *)",
+      "Bash(git -C /d/Test-website push origin main)"
     ]
   }
 }

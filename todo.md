@@ -68,12 +68,12 @@ Cross-reference `testing.md` before checking off any task marked **(test)**.
 
 ## Phase 5 — Home Page
 
-- [ ] Hero section with primary animated/3D element (React Three Fiber scene or equivalent signature visual)
-- [ ] Category showcase section (scroll-reveal animated)
-- [ ] Featured products section (pulls from real API data, not hardcoded)
-- [ ] Inspiration/lifestyle section (scroll-driven, reference kit's "50+ beautiful rooms" section reskinned — original design)
-- [ ] Footer content (links, newsletter signup UI — functional or stubbed, confirm with human which)
-- [ ] **(test)** Reduced-motion fallback verified; mobile layout verified; Lighthouse performance sanity check
+- [x] Hero section with primary animated/3D element (React Three Fiber scene or equivalent signature visual)
+- [x] Category showcase section (scroll-reveal animated)
+- [x] Featured products section (pulls from real API data, not hardcoded)
+- [x] Inspiration/lifestyle section (scroll-driven, reference kit's "50+ beautiful rooms" section reskinned — original design)
+- [x] Footer content (links, newsletter signup UI — functional or stubbed, confirm with human which)
+- [x] **(test)** Reduced-motion fallback verified; mobile layout verified; Lighthouse performance sanity check
 
 ## Phase 6 — Shop / Catalog Page
 
