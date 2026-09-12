@@ -57,14 +57,14 @@ Cross-reference `testing.md` before checking off any task marked **(test)**.
 
 ## Phase 4 — Frontend Foundation & Design System
 
-- [ ] Define Tailwind design tokens (palette, type scale, spacing) per `prd.md` art direction — do this once, don't improvise per-page later
-- [ ] Set up React Router structure (all routes stubbed with placeholder pages)
-- [ ] Build shared layout: header/nav (with cart icon + auth state), footer
-- [ ] Set up Zustand cart store (client-only state at this stage)
-- [ ] Set up TanStack Query provider + Axios base client
-- [ ] Set up Lenis smooth scroll wrapper at app root
-- [ ] Set up GSAP + ScrollTrigger registration at app root
-- [ ] Set up `react-helmet-async` provider for page titles/meta
+- [x] Define Tailwind design tokens (palette, type scale, spacing) per `prd.md` art direction — do this once, don't improvise per-page later
+- [x] Set up React Router structure (all routes stubbed with placeholder pages)
+- [x] Build shared layout: header/nav (with cart icon + auth state), footer
+- [x] Set up Zustand cart store (client-only state at this stage)
+- [x] Set up TanStack Query provider + Axios base client
+- [x] Set up Lenis smooth scroll wrapper at app root
+- [x] Set up GSAP + ScrollTrigger registration at app root
+- [x] Set up `react-helmet-async` provider for page titles/meta
 
 ## Phase 5 — Home Page
 
