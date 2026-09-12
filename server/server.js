@@ -6,6 +6,8 @@ import morgan from 'morgan';
 import rateLimit from 'express-rate-limit';
 import connectDB from './src/config/db.js';
 import { errorHandler } from './src/middleware/index.js';
+import authRoutes from './src/routes/authRoutes.js';
+import productRoutes from './src/routes/productRoutes.js';
 
 // Load environment variables
 dotenv.config();
@@ -51,6 +53,10 @@ const authLimiter = rateLimit({
 
 app.use('/api', limiter);
 app.use('/api/auth', authLimiter);
+
+// API Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/products', productRoutes);
 
 // Health check
 app.get('/api/health', (_req, res) => {

@@ -40,7 +40,7 @@ const productSchema = new Schema({
   },
   material: {
     type: String,
-    enum: ['solid-wood', 'engineered-wood', 'fabric', 'metal', 'glass', 'plastic'],
+    enum: ['solid-wood', 'engineered-wood', 'fabric', 'metal', 'glass', 'plastic', 'leather', 'rattan'],
     default: 'solid-wood',
   },
   finish: {

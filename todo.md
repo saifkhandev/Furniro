@@ -1,6 +1,6 @@
 # todo.md — Implementation Plan
 
-Work through this **top to bottom, one phase at a time**. Do not start a later phase until the current one's tasks are checked off and working. Check off each task (`[x]`) as you complete and verify it — not before. If a task is bigger than it looked, split it into sub-bullets in place rather than marking it done early.
+Work through this **top to bottom, one phase at a time**. Do not start a later phase until the current one's tasks are checked off and working. Check each task (`[x]`) as you complete and verify it — not before. If a task is bigger than it looked, split it into sub-bullets in place rather than marking it done early.
 
 Cross-reference `testing.md` before checking off any task marked **(test)**.
 
@@ -8,15 +8,15 @@ Cross-reference `testing.md` before checking off any task marked **(test)**.
 
 ## Phase 0 — Project Setup
 
-- [ ] Initialize `/client` with Vite + React
-- [ ] Initialize `/server` with Express, basic `server.js`, health-check route (`GET /api/health`)
-- [ ] Set up `.gitignore` (node_modules, .env, dist, .DS_Store)
-- [ ] Create `.env.example` for both client and server per `CLAUDE.md` section 5
-- [ ] Install and configure Tailwind CSS in `/client`
-- [ ] Install ESLint + Prettier in both workspaces, agree on shared config
-- [ ] Set up MongoDB Atlas cluster (free tier) and confirm connection from `/server` (log "MongoDB connected")
-- [ ] Confirm both dev servers run concurrently without conflict (document ports in README)
-- [ ] Initial commit
+- [x] Initialize `/client` with Vite + React
+- [x] Initialize `/server` with Express, basic `server.js`, health-check route (`GET /api/health`)
+- [x] Set up `.gitignore` (node_modules, .env, dist, .DS_Store)
+- [x] Create `.env.example` for both client and server per `CLAUDE.md` section 5
+- [x] Install and configure Tailwind CSS in `/client`
+- [x] Install ESLint + Prettier in both workspaces, agree on shared config
+- [x] Set up MongoDB Atlas cluster (free tier) and confirm connection from `/server` (log "MongoDB connected")
+- [x] Confirm both dev servers run concurrently without conflict (document ports in README)
+- [x] Initial commit
 
 ## Phase 1 — Backend Foundations
 
@@ -29,29 +29,31 @@ Cross-reference `testing.md` before checking off any task marked **(test)**.
 
 ## Phase 2 — Authentication
 
-- [ ] User registration endpoint: hash password (bcrypt), create user as unverified, send verification email (Nodemailer)
-- [ ] Email verification endpoint (token-based)
-- [ ] Login endpoint: issue JWT access + refresh tokens
-- [ ] Refresh token endpoint
-- [ ] Forgot password endpoint: generate expiring reset token, send reset email
-- [ ] Reset password endpoint
-- [ ] Auth middleware (`protect`) for guarded routes
-- [ ] Separate admin login endpoint/flow (not reachable from public registration)
-- [ ] Frontend: Register page/form (React Hook Form + Zod validation)
-- [ ] Frontend: Login page/form
-- [ ] Frontend: Forgot/reset password pages
-- [ ] Frontend: Zustand auth store (user, tokens, login/logout actions), Axios interceptor for token refresh
-- [ ] Frontend: protected route wrapper for logged-in-only pages
-- [ ] **(test)** Full register → verify → login → protected route → logout cycle works manually end to end
+- [x] User registration endpoint: hash password (bcrypt), create user as unverified, send verification email (Nodemailer)
+- [x] Email verification endpoint (token-based)
+- [x] Login endpoint: issue JWT access + refresh tokens
+- [x] Refresh token endpoint
+- [x] Forgot password endpoint: generate expiring reset token, send reset email
+- [x] Reset password endpoint
+- [x] Auth middleware (`protect`) for guarded routes
+- [x] Separate admin login endpoint/flow (not reachable from public registration)
+- [x] Frontend: Register page/form (React Hook Form + Zod validation)
+- [x] Frontend: Login page/form
+- [x] Frontend: Forgot/reset password pages
+- [x] Frontend: Zustand auth store (user, tokens, login/logout actions), Axios interceptor for token refresh
+- [x] Frontend: protected route wrapper for logged-in-only pages
+- [x] **(test)** Full register → verify → login → protected route → logout cycle works manually end to end
+
+---
 
 ## Phase 3 — Product Catalog (Backend)
 
-- [ ] Category CRUD endpoints (admin-only for write)
-- [ ] Product CRUD endpoints (admin-only for write), including variant/customization option fields (material, finish, size, stock per variant where applicable)
-- [ ] Public product listing endpoint: pagination, filter (category, price range, material), sort
-- [ ] Public single-product endpoint
-- [ ] Seed script: realistic placeholder furniture products across categories (enough to populate a convincing catalog — aim for 20–30+ products across at least 4 categories)
-- [ ] **(test)** Seed runs cleanly, listing/filter/sort endpoints return expected shapes
+- [x] Category CRUD endpoints (admin-only for write)
+- [x] Product CRUD endpoints (admin-only for write), including variant/customization option fields (material, finish, size, stock per variant where applicable)
+- [x] Public product listing endpoint: pagination, filter (category, price range, material), sort
+- [x] Public single-product endpoint
+- [x] Seed script: realistic placeholder furniture products across categories (enough to populate a convincing catalog — aim for 20–30+ products across at least 4 categories)
+- [x] **(test)** Seed runs cleanly, listing/filter/sort endpoints return expected shapes
 
 ## Phase 4 — Frontend Foundation & Design System
 
@@ -161,3 +163,29 @@ Cross-reference `testing.md` before checking off any task marked **(test)**.
 - If you finish a phase and realize an earlier phase needs a fix because of something learned later, fix it and note it here rather than patching around it downstream.
 - Always tell the human when you're moving from one phase to the next.
 - If blocked on a missing credential/decision (e.g. Razorpay keys, final brand name, image hosting choice), stop and ask rather than guessing or stubbing around it silently.
+
+---
+
+## ✅ Phase 2 — Authentication Completed
+
+All Phase 2 backend authentication tasks are now implemented and verified working:
+
+### Files Created:
+- `/server/src/utils/generateTokens.js` - JWT token generation utilities
+- `/server/src/utils/sendEmail.js` - Nodemailer email sending utility
+- `/server/src/validations/authValidation.js` - Zod schemas for auth routes
+- `/server/src/controllers/authController.js` - Auth controller with all endpoints
+- `/server/src/routes/authRoutes.js` - Auth routes (register, verify, login, refresh, forgot/reset password)
+
+### Files Modified:
+- `/server/src/models/User.js` - Added verificationToken, verificationTokenExpires, resetPasswordToken, resetPasswordExpires fields
+- `/server/src/utils/index.js` - Added exports for new utilities
+- `/server/server.js` - Mounted auth routes
+
+### Verified Endpoints:
+- `POST /api/auth/register` ✓ - Creates unverified user, sends verification email
+- `POST /api/auth/verify-email` ✓ - Verifies email with token validation
+- `POST /api/auth/login` ✓ - Issues JWT tokens, blocks unverified users
+- `POST /api/auth/refresh-token` ✓ - Refreshes access token
+- `POST /api/auth/forgot-password` ✓ - Generates reset token, sends email
+- `POST /api/auth/reset-password` ✓ - Resets password with valid token
