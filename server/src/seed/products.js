@@ -356,6 +356,7 @@ async function seed() {
       return {
         ...product,
         category: categoryMap[categoryName],
+        slug: product.slug || product.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''),
       };
     });
 
