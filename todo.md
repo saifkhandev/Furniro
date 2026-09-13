@@ -77,11 +77,12 @@ Cross-reference `testing.md` before checking off any task marked **(test)**.
 
 ## Phase 6 — Shop / Catalog Page
 
-- [ ] Product grid connected to real API (pagination)
-- [ ] Filter sidebar/drawer (category, price, material) wired to API query params
-- [ ] Sort control wired to API
-- [ ] Product card component (image, name, price, quick-add or link to detail) with entrance animation
-- [ ] Empty-state and loading-state handling
+- [x] Product card component (`ProductCard.jsx`) with hover animation, lazy-loaded image, out-of-stock badge
+- [x] Filter sidebar + mobile drawer wired to category, price range, material, and sort
+- [x] Empty-state and loading-state handling in grid
+- [x] Pagination connected to real API response
+- [x] Mobile filter drawer includes full category/material/sort controls
+- [x] `framer-motion` dependency added (missing from package.json)
 - [ ] **(test)** Filtering/sorting/pagination all produce correct results; mobile filter drawer works
 
 ## Phase 7 — Product Detail & Customization

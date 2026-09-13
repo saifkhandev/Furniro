@@ -42,7 +42,13 @@
       "PowerShell(winget upgrade *)",
       "Bash(winget uninstall *)",
       "Bash(winget install *)",
-      "Bash(npm list *)"
+      "Bash(npm list *)",
+      "Bash(grep -c \"Login stub\" D:\\\\\\\\Test-website\\\\\\\\client\\\\\\\\src\\\\\\\\pages\\\\\\\\Login.jsx)",
+      "Bash(grep -n \"Sign Up\" D:\\\\\\\\Test-website\\\\\\\\client\\\\\\\\src\\\\\\\\pages\\\\\\\\Login.jsx)",
+      "Bash(mongosh --quiet --eval ' *)",
+      "Bash(git -C D:\\\\Test-website add -A)",
+      "Bash(git -C D:Test-website commit -m 'fix: complete auth frontend — Login/Register wired to backend with validation *)",
+      "Bash(git *)"
     ]
   }
 }
