@@ -38,7 +38,11 @@
       "Read(//client/src/**)",
       "Bash(git -C /d/Test-website add -A)",
       "Bash(git -C /d/Test-website commit -m 'feat: Complete Phase 5 - Home Page *)",
-      "Bash(git -C /d/Test-website push origin main)"
+      "Bash(git -C /d/Test-website push origin main)",
+      "PowerShell(winget upgrade *)",
+      "Bash(winget uninstall *)",
+      "Bash(winget install *)",
+      "Bash(npm list *)"
     ]
   }
 }
